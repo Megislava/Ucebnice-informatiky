@@ -1,0 +1,89 @@
+<center><h1>Zobrazení čísel v počítači</h1></center>
+<br/>
+<br/>
+Základní jednotkou pro uchování informace slouží bit. Bit dokáže zachytit dva 
+
+stavy true a false tj. hodnota 1 a hodnota 0. Pomocí n bitů dokážeme zachytit 2n stavů. Osm bitů (b) 
+
+tvoří jeden bajt (B). V následující tabulce můžeme vidět nárůst bajtů a jejich 
+
+zjednodušené zápisy pomocí předpon. (viz následující tabulka).
+<br/>
+<br/>
+<center><table  border="2" cellpadding="3" cellspacing="3">
+	<tr> <th>Předpona</th> <th>Značka</th> <th>Mocnina</th> <th>Převod</th> </tr>
+	<tr> <td>kilo</td> <td>k</td> <td>2^10B</td> <td>1 024 B</td> </tr>
+	<tr> <td>mega</td> <td>M</td> <td>2^20B</td> <td>1 048 576 B</td> </tr>
+	<tr> <td>giga</td> <td>G</td> <td>2^30B</td> <td>1 073 741 824 B</td> </tr>
+	<tr> <td>tera</td> <td>T</td> <td>2^40B</td> <td>1 099 511627 776 B</td> </tr>
+</table></center>
+<br/>
+<br/>
+Dříve k záznamu a kódování dat sloužil kámen, papyrus a později papír. Dnes 
+
+se většinou používají datové nosiče (flash disky, DVD,...) nebo cloudové služby.
+<br/>
+<br/>
+Kódování je způsob přenosu informace z jedné soustavy do druhé. V našem 
+
+případě jsou to převody mezi číselnými soustavami. K jejich reprezentaci se 
+
+používají číslice (symboly) a tak se tato zařízení nazývají 
+
+digitální.
+<br/>
+<br/>
+Zakódovaná data jsou uložena v různých číselných soustavách. Číselná soustava je způsob zápisu a reprezentace čísel s využitím čísel a symbolů. Všechny soustavy jsou definovány svým základem: desítková - základ deset, dvojková - základ dva atp. Soustavy jsou mezi sebou volně převoditelné (pokud jde o celá čísla tak bez ztráty přesnosti).
+<br/>
+V současných a také v prvních počítačích se informace ukládají nejčastěji pomocí 
+
+dvojkové (binární) soustavy, dále pak desítková (dekadická) a šestnáctková 
+
+(hexadecimální) soustava. Desítkovou soustavu používáme v našem životě normálně takže není potřeba ji nějak zvlášť probírat. 
+<br/>
+<br/>
+<center><h1>Dvojková soustava</h1></center>
+ <br/>
+
+Binární soustava je číselná soustava, která se jak již lze poznat z názvu 
+
+vyjadřuje dvěma číslicemi jedničkou a nulou (ve skutečnosti jsou to dva stavu - zapnuto/vypnuto). Právě tyto dvě čísla se nejčastěji 
+
+vyskytují v počítačích. Je to z toho důvodu, že 0 a 1 jdou snadno reprezentovat pomocí elektrického (nebo optického) signálu = zapnuto/vypnuto. Kdyby byla tato škála založena na intenzitě proudu pak by byla velmi náchylná k chybám a vyžadovala by složitější stavební prvky. 
+<br/>
+<br/>
+Dvojková soustava má různé možnosti reprezentace záporných čísel. Existují proto tři přístupy (přímý, inverzní a doplňkový kód) přičemž každý je svým způsobem výjimečný. V <b>přímém kódu</b> se před samotné binární číslo přidává ještě znaménkový bit. Nula znamená kladné číslo a jednička značí záporné číslo, tj. 5 = 00101 a -5 = 10101. V <b>inverzním kódu</b> se záporná čísla reprezentují jejich binární inverzí, tj. 5 = 00101 a -5 = 11010. Poměrně snadno lze vyvodit, že reprezentace nuly jsou v přímém a inverzním kódu dvě a to je záporná a kladná nula (v doplňkovém je jenom jedna). V <b>doplňkovém kódu</b> jsou záporná čísla uchovávána jako binární inverze příslušného kladného čísla zvětšená o jedničku, tj. 5 = 00101 a -5 = 11011. 
+<br/>
+<br/>
+
+<center><h1>Šestnáctková a osmičková soustava</h1></center>
+<br/>
+V šestnáctkové soustavě se používají nejenom číslice (0 - 9), ale také písmena 
+
+(A - F). Díky snadnému převodu mezi binární a hexadecimální soustavou se 
+
+dnes tato číselná soustava používá v informatice k zápisu adresy operační 
+
+paměti počítače. V případě osmičkové soustavy se jedná o podobný princip její existence. Její základ je osm, takže čísla se zobrazují od nuly do sedmičky.
+<br/>
+<br/>
+Jak osmičnová tak i šestnáctková soustava jsou především používány pro "zhuštěný" zápis binárních čísel, tj. snažíme se o co nejkratší zápis.
+<br/>
+<br/>
+ <center><h1>Zobrazování reálných čísel v počítači</h1></center>
+<br/>
+Reálná čísla jsou čísla s plovoucí (pohyblivou) řádovou čárkou. Nemohou se tudíž zobrazovat jako celá čísla. Reprezentaci reálných čísel řeší <b>norma IEEE 754</b>, která definuje několik formátů (single, double) a velikosti jednotlivých součástí.
+<br/>
+<br/> 
+Číslo zobrazené pomocí IEEE 754 se skládá ze znaménka, které má zpravidla jeden bit a dále z exponentu a mantisy, které mají rozdílný počet bitů v závislosti na formátu čísla. Pro single formát má exponent 8 bitů a mantisa 23 bitů což dohromady s znaménkovým bitem dává 32 bitů, tj. 4 bajty. Pro double formát reálného čísla má exponent 11 bitů a mantisa má 52 bitů, dohromady 64 bitů (což je dvakrát více než single formát). 
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100518857-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

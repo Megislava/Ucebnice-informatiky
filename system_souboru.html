@@ -1,0 +1,34 @@
+<center><h1>Systém souborů</h1></center>
+<br/>
+<br/>
+Systém souborů je prostředek pro organizaci dat na vnější paměti a pro správu volného místa v paměti. Poskytuje systém pojmenování souborů a jejich správy. Soubor je pojmenovaná kolekce souvisejících informací. Mezi základní funkce systému souborů patří pojmenovaní souborů a jejich správa vytváření, rušení, čtení, úprava a také skladování souborů na vnější paměti, jejich vyhledání a zobrazení do operační paměti. Jednotná podpora I/O pro různá úložná zařízení. Minimalizuje riziko ztráty nebo poškození dat. Krom těchto základních funkcí různých operací se soubory, má systém souborů podporu na úrovni operačního systému. 
+<br/>
+<br/>
+<center><h2>Hierarchický a databázový systém souborů</h2></center>
+<br/>
+Soubory a adresáře jsou organizovány do stromu: každý uzel má právě jednoho předka a libovolný počet potomků, uzly reprezentující soubory nemají žádné potomky a celý strom má právě jeden kořen (root). Existují dva přístupy k organizaci souborů a adresářů do stromů, jsou jimi hierarchická a databázový souborový systém. 
+<br/>
+Hierarchický souborový systém obsahuje kořenový adresář, který může obsahovat adresáře, ty zase obsahují další podadresáře atd. V jednotlivých adresářích jsou uložené soubory. Soubor je zpřístupněn zadáním "cesty" k souboru. Adresáře jsou tudíž speciální typ (meta)souboru. Drží informace o souborech, nikoli však jejich vlastní data. 
+<br/>
+Oproti tomu v databázovém hierarchickém souborovém systému jsou soubory uložené jako položky databáze spolu s jejich charakteristikami metadaty (např. typ souboru, datum vytvoření, autor...). Databázový systém oproti hierarchickému má lepší vyhledávání, má bohatší množinu operací, ale má složitější implementaci.
+<br/>
+<br/>
+<center><h2>Ukládání souborů na disk</h2></center>
+<br/>
+Existují dva typy struktury souborů - textové a binární. Soubory se mohou dělit i na řádné soubory, adresáře, speriální soubory a blokové soubory. <b>Řádné</b> soubory jsou běžné soubory v počítač, <b>adresáře</b> slouží k udržení heirarchické struktury. <b>Speciální</b> soubory mají přístup ke konkrétnímu zařízení (/dev/mouse, /dev/audio,...), které jsou ve skutečnosti virtuální rozhraní k periferiím. Jejich výhodou je, že se tejnými operacemi pracují i periferie. <b>Blokové soubory</b> mají náhodný přístup na základní úrovni (/dev/hd, /hd/kmem) tj. periferie, které nejsou orgranizovány po bytech, ale po blokových jednotkách. Soubory se také mohou dělit typem přístupu na sekvenční, náhodný a indexsekvenční. Náhodný přístup: je možné přistoupit k libovolnému souboru v libovolném pořadí. Sekvenční přístup: k souborům je možné přistupovat pouze postupně (jako na pásce). Indexsekvenční: data jsou ukládána sekvenčně, vytváří se indexovací tabulka pro rychlé vyhledávání. 
+<br/>
+Jak už se řeklo, soubor je souvislost bitů na disku. Otázkou však zůstává jak jsou tyto byty na disku uloženy. Existují čtyři strategie jak ukládat na disk - souvislé ukládání, ukládání provázaným seznamem, indexové ukládání a ukládání na disk pomocí inodes. <b>Souvislé</b> ukládání souboru na disk: soubor na disku zabírá množinu sousedních bloků. Na disku se vyhledá místo, kde se soubor vejde, zaplní se první blok a následně se souvisle ukládají další. Při čtení souboru pak stačí zadat adresu prvního bloku (tzv. báze) a počet bloků, které chceme číst. Při ukládání souboru na disk pomocí <b>provázaného seznamu</b> se bloky, které tvoří soubor jsou rozmístěny na disku nesouvisle každý blok souboru obsahuje ukazatel na následující blok. Na začátku disku se nachází speciální soubor tabulka, která obsahuje ukazatele na první blok každého souboru, který je na disku uložen. Použít provázaný seznam se hodí zejména pro soubory, u kterých víme, že se nebudou měnit, protože když se soubory často mení tak se v nich tvoří díry. Tyto díry sice lze zaplnit, ale potom je jeden soubor rozházen různě po disku. Při <b>indexovém</b> ukládání souborů na disk jsou souboru opět přiděleny bloky na disku. Ke každému souboru patří ještě tzv. "indexový blok", který obsahuje ukazatele na všechny bloky, které danému souboru patří. Zbývá už tedy jenom poslední typ ukládání na to je pomocí inodes. <b>Inodes</b> je UNIXovská implementace indexového ukládaní souboru zkratka inode znamená index node, tedy indexový uzel. V každém indexovém uzlu se nachází 15 ukazatelů. 12 z nich ukazuje přímo na bloky přidělené souboru. Dále uzel obsahuje 1 nepřímý ukazatel, který ukazuje na blok ukazatelů, které zase ukazují na bloky patřící souboru. Nakonec uzel obsahuje 1 dvojitě nepřímý ukazatel a 1 trojitě nepřímý ukazatel.
+<br/>
+<br/>
+<center><h2>Volné bloky</h2></center>
+<br/>  
+Existují tři možnosti držení informace o volných blocích souborového systému. Bitový vektor: každý blok je reprezentován jedním bitem (volný/obsazený). Provázaný seznam: každý volný blok odkazuje na příští volný blok (Udržuje se cache prvních volných bloků ve speciálních oblastech). Tabulkou: uloží se pouze adresa prvního volného bloku a počet souvislých následujících volných bloků (využívá se faktu, že prostor je často alokován souvisle). Většinou jsou zpracovávány pomocí FCFS. FCFS znamená First come First serve, a říká, že první příchozí bude nejdříve obsloužen. Jedná se o analogii fronty (FIFO, First in, First Out). 
+<br/>
+<br/>
+<center><h2>Vyrovnávací paměť</h2></center>
+<br/>
+Vyrovnávací paměť neboli cache je paměť s rychlým přístupem a malou kapacitou, která obsahuje nejčastěji používané bloky dat nebo soubory. Používá se pro skrytí zpoždění (latence) pomalejších zařízení. Je obvykle pouze pro čtení (snazší), ale může být i pro zápis. Problémem může být konzistence při přístupech nebo zápisech z více míst. Existují dva typy vyrovnávací paměti - writethrough a writeback. Writethrough: okamžitě po zápise do vyrovnávací paměti se data zapíšou i na disk. Writeback: po zápise do vyrovnávací paměti se počká (např. 30 sekund), až pak se data zapíšou na disk. 
+
+
+
+ 

@@ -1,0 +1,74 @@
+/*------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------
+//                       � Anna Jungmannov�
+//                         5.mesic 2017
+//   Jednoduch� webov� str�nky pro popul�rn� nau�nou prezentaci odborn� pr�ce
+//------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------*/
+
+/*@font-face {
+            font-family: font-nadpis;
+            src: url("./font-nadpis.ttf");
+            }
+*/
+/*--------------------------- HTML ELEMENTY  -------------------------------------*/
+a{text-decoration: none; color:black; }
+a:hover{text-decoration: none;}
+a:link{text-decoration: none;}
+a:visited{text-decoration: none;}
+a:active{text-decoration: none;}
+
+body{
+        background-color: rgba(149, 149, 149, 0.48);
+        height: auto;
+        margin:auto;
+        }
+
+.head{
+  background-color: rgb(232, 61, 15);
+  height: 65px;
+}
+
+.title{
+        font-family:"Titillium Web";
+        font-size:240%;
+        margin-left: 240px;
+        }
+
+.body{
+        background-color: #FFFFFF;
+        font-family:'Monda';
+        font-size:85%;
+        min-height: auto;
+        position: relative;
+        left: 190px;
+        top: 10px;
+        width: 75%;
+        box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white, 12px 0 15px -4px rgba(203, 197, 197, 0.81), -12px 0 15px -4px rgba(203, 197, 197, 0.81);
+        }
+
+.img{
+        position: relative;
+        margin-top: 5px;
+        left: 50px;
+    }
+
+.oddelovac{
+  background-color: rgba(203, 197, 197, 0.81);
+  max-width: 95%;
+  margin-left: 30px;
+  margin-top: 10px;
+  height: 10px;
+  border-radius: 5%;
+  margin-bottom: 10px;
+}
+
+.vlevo{
+	margin-left: 50px;
+}
+
+.uprostred{}
+
+.vpravo{
+margin-right:50px;
+}

@@ -1,0 +1,33 @@
+<center><h1>Bitmapová grafika</h1></center>
+<br/>
+<br/>
+U bitmapové (či rastrové) grafiky se obrázek skládá z jednotlivých pixelů, z nichž každý má definovanou určitou barvu a tvoří tak dvojrozměrnou matici bodů. Každý pixel nese informaci o jasu, barvě, průhlednosti a dalších hodnot. Barva pixelu je definována bitem čili barevnou hloubkou. Ta slouží na to, abychom věděli kolik informací obsahuje jeden bod. Čím vyšší je barevná hloubka tím více barev nám dokáže zobrazit. Nejpoužívanější přípona JPG má 24 bitovou barevnou hloubku a tak dokáže zobrazit 256 barev. Pokud máme 32bitovou barevnou hloubku tak dohromady pak dostáváme cca 16 777 216 zobrazitelných barev. Obrázek se dá přebarvit, gumovat,... Obrázek v rastrové grafice má <b>omezené rozlišení</b> (udávané počtem řádků a sloupců) a tudíž v případě, že zmenšíme bitmapový obrázek tak se zmenší i počet jeho pixelů a ztratí se část jeho informace. Zvětšíme-li tento obrázek tak se obrázek sice roztáhne, ale počet pixelů se nezvětší a obrázek se tedy rozostří.
+
+<center><h1>Vektorová grafika</h1></center>
+<br/>
+<br/>
+Oproti tomu vektorový obrázek se skládá <b>z jednotlivých geometrických objektů</b> (souřadnice bodů, úsečka, křivka, ale i kružnice, čtverce, obdélníky, elipsa,...) z nichž každý má definovanou barvu, styl obrysu a styl výplně. Tyto jednotlivé objekty jsou popsány matematickými výrazy a je možné je kdykoliv od sebe oddělit. Při zmenšování či zvětšování vektorového obrázku <b>nemá vliv</b> na množství informace a tudíž ani na jeho kvalitu. Dnes se poměrně často kombinuje rastrová a vektorová grafika v souborových formátech : PDF a SWF.
+<br/>
+<center> <img src="http://ucebnice-informatiky.eu/obsah/vektorova-bitmapova-grafika.jpg" />
+<br/> Vektorová a bitmapová grafika </center>
+<br/>
+<center><h1>Technologie dispejů</h1></center>
+<br/>
+<br/>
+<b>CRT</b>: Barevný obraz se vytváří pomocí 3 elektronových paprsků, které emituje elektronové dělo. Tyto paprsky postupně po řádcích rozsvěcují jednotlivé obrazové body, které obsahují fosfor (emituje viditelné světlo) a barevné filtry. <b>LCD</b>: Každý pixel LCD se skládá z molekul tekutých krystalů uložených mezi dvěma elektrodami a dvěma polarizačními filtry. V běžném stavu molekuly tekutých krystalů polarizují světlo o 90° a umožňují jeho přechod i přes druhý filtr. Po dodání elektrické energie a vzniku elektrického pole nastává rotace molekul rovnoběžně s elektrickým polem, což má za následek snížení polarizačního efektu tekutého krystalu. Pokud nejsou molekuly vůbec otočené, tedy nepolarizují, světlo bude zablokované druhým filtrem a pixel se jeví jako nerozsvícený. <b>Plazmový displej</b> se skládá z buněk mezi dvěma skleněnými tabulemi. V těchto buňkách je uzavřená směs vzácných plynů a rtuti. Když buňkou prochází elektrický proud, plyn tvoří plazmu. Elektrony, které se pohybují v plazmě narážejí do molekul rtuti, čímž se zvyšuje jejich energie, která je uvolněna jako UV záření. UV záření dopadá na fosfor v buňce a ten následně emituje viditelné světlo. Protože energie fotonů viditelného světla je nižší než energie fotonů UV záření, vydává se zároveň i teplo (infračervené záření). Každý pixel barevného plazmového displeje se skládá z 3 takovýchto buněk. Požadované barvy vznikají při změně napětí přicházejícího do buňky. <b>OLED</b> (Organic Light-Emitting Diode) je typ displeje využívající technologii organických elektroluminiscenčních diod. Tato technologie tedy nepotřebuje žádné další podsvětlení jako např. LCD. Existují i ohebné varianty těchto displejů.
+
+<center><h1>Komprese</h1></center>
+<br/>
+<br/>
+Mnohdy se stane, že velikost souboru, který chceme někomu poslat je příliš velká a tak musí daný soubor projít kompresí. Existují dva druhy kompresí, při nichž závisí na formátu daného souboru, bezztrátová a ztrátová. Při <b>bezztrátové kompresi</b> se zachovávají soubory s identickou informací a nedochází tak ke ztrátě kvality obrazu. Obvykle však není tak účinná jako <b>ztrátová komprese</b> dat. Při ztrátové kompresi dat se zahazuje část grafické informace a používá se tady zejména tam kde je možné ztrátu některých informací tolerovat. Je zde samozřejmě značná nevýhoda ve zkreslení obrazu, ale na druhou stranu výhoda při značném zmenšení velikosti souboru.
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100518857-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

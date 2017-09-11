@@ -1,0 +1,26 @@
+<center><h1>Přerušení a pooling</h1></center>
+<br/>
+<br/>
+<b>Přerušení</b> je mechanismus, který umožňuje pozastavit vykonávaný proces na základě externí příčiny. Např. OS obecně reaguje na asynchronní událost, ty přicházejí zcela nečekaně (třeba po síti) a operační systém musí vyřešit, jak na ně reagovat. Mezi hlavní významy přerušení patří podpora vstupně/výstupních zařízení (tzv. I/O), řešení problémů v programovém vybavení (např. neautorizovaný přístup, nelegální instrukce nebo operandy), řešení požadavků počítačem řízeného systému (přehřívání),... Existují tři druhy přerušení: přerušení od časovače, kde je časový limit a po této době se proces přeruší, přerušení od periferie a přerušení z procesoru.  
+<br/>
+Při přerušení aktuálně běžícího programu je nutné uložit stav a zapamatovat si místo návratu. V případě, že je více zdrojů a příčin přerušení tak je nutné rozlišit typy (příčinu) přerušení a dále je nutno si zapamatovat zdroj přrušení. Přerušení je obsluhováno v jádru OS. Je to z důvodu zajištění serializace a z důvodu bezpečnosti. Při obsluze přerušení je tedy potřeba si zapamatovat místo návratu, zajistit serializaci a přepnout kontext. Přepnutí kontextu je operace, při níž multitaskingový operační systém přepíná mezi procesy, nebo mezi uživatelským prostorem a jádrem. 
+<br/>
+<br/>
+<b>Pooling</b> je opakující se dotaz na událost nebo stav něčeho. Je to alternativa k přerušení, ale může se použít oboje. Pooling zaměstnává procesor, rozdlí oproti přerušení spočívá v tom, že přerušení je externí signál, kdy procesor dělá, co chce a reaguje až tehdy, pokud přijde signál. Pooling oproti tomu zaměstnává procesor stále - jako když oslík ve Shrekovi neustále pokládal otázky "Kdy už tam budem?". Pooling může ale zůstávat jenom v uživatelském prostoru a nevyvolávat změnu konktextu.
+<br/>
+<br/>
+<center><h1>Multitasking, multithreading a multiprocessing</h1></center>
+<br/>
+<br/>
+<b>Multitasking</b> je schopnost operačního systému provádět (přinejmenším zdánlivě) několik procesů současně. Jádro operačního systému velmi rychle přepíná mezi běžícími procesy (= změna kontextu) a uživatel má dojem, že všechno běží současně. <b>Multithreading</b> je podpora efektivního běhu více vláken jednoho procesu a dochází tak k maximalizace využití dostupného hardware. Hlavní vlastností vláken je, že mají sdílenou paměť, což je jejich hlavní výhoda. Typickým příkladem multithreadingu je paralelní programování. <b>Multiprocessing</b> je použití dvou nebo více procesorů v rámci jednoho počítačového systému a zároveň schopnost systému přidělovat jednotlivými procesorům úlohy. Víceprocesorový systém je výsledkem snahy o zvětšení výkonu počítače. 
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100518857-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
